@@ -18,7 +18,7 @@ import static java.lang.String.format;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class NotificationsConsumer {
+public class  NotificationsConsumer {
 
     private final NotificationRepository repository;
     private final EmailService emailService;
