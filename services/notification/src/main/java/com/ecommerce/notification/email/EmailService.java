@@ -15,7 +15,6 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import static com.ecommerce.notification.email.EmailTemplates.ORDER_CONFIRMATION;
 import static com.ecommerce.notification.email.EmailTemplates.PAYMENT_CONFIRMATION;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -33,12 +32,12 @@ public class EmailService {
             String destinationEmail,
             String customerName,
             BigDecimal amount,
-            String orderReference 
+            String orderReference
     ) throws MessagingException {
 
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, UTF_8.name());
-        messageHelper.setFrom("contact@huzaifacoding.com");
+        messageHelper.setFrom("contact@aliboucoding.com");
 
         final String templateName = PAYMENT_CONFIRMATION.getTemplate();
 

@@ -6,17 +6,16 @@ spring:
       username: huzaifa
       password: huzaifa
       host: localhost
-      port: 27017
+      port: 27017x
       database: customer
       authentication-database: admin
-
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
-      group-id: paymentGroup,orderGroup
+      group-id: paymentGroup
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: '*'
         spring.json.type.mapping: orderConfirmation:com.ecommerce.order.kafka.OrderConfirmation,paymentConfirmation:com.ecommerce.payment.notification.PaymentNotificationRequest
@@ -31,9 +30,7 @@ spring:
           trust: "*"
         auth: true
         starttls:
-          enabled: true
+          enable: true
         connectiontimeout: 5000
         timeout: 3000
         writetimeout: 5000
-
-

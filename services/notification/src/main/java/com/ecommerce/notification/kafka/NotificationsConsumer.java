@@ -1,5 +1,4 @@
-package com.ecommerce.notification.kafka.payment;
-
+package com.ecommerce.notification.kafka;
 import com.ecommerce.notification.email.EmailService;
 import com.ecommerce.notification.kafka.order.OrderConfirmation;
 import com.ecommerce.notification.kafka.payment.PaymentConfirmation;
@@ -18,8 +17,7 @@ import static java.lang.String.format;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class  NotificationsConsumer {
-
+public class NotificationsConsumer {
     private final NotificationRepository repository;
     private final EmailService emailService;
     @KafkaListener(topics = "payment-topic")
